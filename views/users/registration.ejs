@@ -1,0 +1,88 @@
+
+
+<!-- <h1>User Registration Form</h1>
+
+<form action="" method="post">
+    <input type="text" name="name" placeholder="Enter Name" required>
+    <br><br>
+    <input type="email" name="email" placeholder="Enter Email" required>
+    <br><br>
+    <input type="text" name="mno" placeholder="Enter Mobile" required>
+    <br><br>
+    <input type="password" name="password" placeholder="Enter Password" required>
+    <br><br>
+    <input type="submit" value="Register">
+</form>
+
+
+<% 
+
+  if(typeof message !== 'undefined'){
+     %>
+       <p style="color: green;"><%= message %></p>
+     <%
+  }
+
+%>   -->
+
+<%- include('../partials/head.ejs') %>
+    <style>
+        /* Custom CSS for the form container's height and spacing between fields */
+        .custom-form-container {
+            min-height: 500px; /* Adjust the height as needed */
+        }
+        .custom-form-field {
+            margin-bottom: 20px; /* Adjust the margin to increase space between fields */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Registration Form -->
+                <div class="card custom-form-container">
+                  <div style="background-color: rgba(0, 0, 0, 0.077);" class="card-body">
+                        <h1 class="card-title text-center">User Registration Form</h1>
+                        <br><br>
+                        <form action="/register" method="post">
+                            <div class="mb-3 custom-form-field">
+                                <input type="text" class="form-control" name="name" placeholder="Enter Name" required>
+                            </div>
+                            <br>
+                            <div class="mb-3 custom-form-field">
+                                <input type="email" class="form-control" name="email" placeholder="Enter Email" required>
+                            </div>
+                            <br>
+                            <div class="mb-3 custom-form-field">
+                                <input type="text" class="form-control" name="mno" placeholder="Enter Mobile" required>
+                            </div>
+                            <br>
+                            <div class="mb-3 custom-form-field">
+                                <input type="password" class="form-control" name="password" placeholder="Enter Password" required>
+                            </div>
+                            <br>
+                            <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                            </div>
+                        </form>
+                        <p class="mt-3">go back to login? <a href="/login">login</a></p>
+                        <div class="text-center">
+
+                        <% 
+                          if (typeof message !== 'undefined') {
+                        %>
+                            <p style="color:red;"><%= message %></p>
+                        <%
+                          }
+                        %>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Registration Form -->
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/foot.ejs') %>
+
